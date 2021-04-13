@@ -3,12 +3,21 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.OleDb;
 using System.IO;
+using System.Linq;
 using System.Media;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Forms;
 using System.Windows.Input;
+using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
 
@@ -70,7 +79,7 @@ namespace TamagochiV2
         private OleDbConnection conectarBBDD()
         {
             r = Directory.GetCurrentDirectory();
-            myconect = new OleDbConnection(@"Provider = Microsoft.ACE.OLEDB.12.0; Data Source = " + r + "/Ranking.accdb");
+            myconect = new OleDbConnection(@"Provider = Microsoft.ACE.OLEDB.12.0; Data Source = "+r+"/Ranking.accdb");
             myconect.Open();
             return myconect;
         }
@@ -113,7 +122,7 @@ namespace TamagochiV2
 
                 ParpadoDer.BeginAnimation(Ellipse.HeightProperty, cerrarOjos);
                 ParpadoIzq.BeginAnimation(Ellipse.HeightProperty, cerrarOjos);
-
+                
             }
 
         }
@@ -121,7 +130,7 @@ namespace TamagochiV2
         private void finJugar(object sender, EventArgs e)
         {
             btnJugar.IsEnabled = true;
-
+           
         }
 
         private void finComer(object sender, EventArgs e)
@@ -170,13 +179,13 @@ namespace TamagochiV2
             }
             else if (nivel == 3)
             {
-                value = random.Next(22, 42);
-
+               value = random.Next(22, 42);
+                
             }
             else if (nivel == 4)
             {
                 value = random.Next(20, 40);
-
+                
             }
 
             return value;
@@ -234,7 +243,7 @@ namespace TamagochiV2
                 this.TBPuntuacion.Text = "Puntuacion: " + 0 + "pts.";
                 nveces = 0;
                 this.TBRecord.Text = "Record: " + record;
-            }
+            }   
         }
 
         private void FondoDesierto(object sender, MouseButtonEventArgs e)
@@ -315,30 +324,30 @@ namespace TamagochiV2
             if (nivel == 1)
             {
                 this.imaFondo.Source = new BitmapImage(new Uri(@"calavera.jpg", UriKind.Relative));
-
+                
             }
             else if (nivel == 2)
             {
                 this.imaFondo.Source = new BitmapImage(new Uri(@"barco.jpg", UriKind.Relative));
-
+               
             }
             else if (nivel == 3)
             {
                 this.imaFondo.Source = new BitmapImage(new Uri(@"cielo.jpg", UriKind.Relative));
-
+                
             }
             else if (nivel == 4)
             {
                 this.imaFondo.Source = new BitmapImage(new Uri(@"mar.jpg", UriKind.Relative));
             }
-
+            
         }
 
         private void pasarNivel(int puntuacionfinal)
         {
             if (puntuacionfinal == 100)
             {
-
+                
                 if (nivel == 0 && campeon > 0)
                 {
                     nivel++;
@@ -357,7 +366,7 @@ namespace TamagochiV2
                     asignarNivel(nivel);
                     eventoLogroNivel();
                 }
-
+                
             }
         }
 
@@ -469,7 +478,7 @@ namespace TamagochiV2
                     this.Close();
                 };
                 timer.Start();
-
+                
             }
         }
 
@@ -479,7 +488,7 @@ namespace TamagochiV2
             SoundPlayer Player = new SoundPlayer();
             Player.SoundLocation = ruta;
             Player.Play();
-
+         
         }
     }
 

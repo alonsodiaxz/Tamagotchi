@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:TamagochiV2"
         xmlns:RankingDSTableAdapters="clr-namespace:TamagochiV2.RankingDSTableAdapters" xmlns:System="clr-namespace:System;assembly=mscorlib" x:Class="TamagochiV2.MainWindow"
         mc:Ignorable="d"
-        Title="MainWindow" Height="763" Width="1018" Background="#FFBD0404" Icon="tamagotchi.png" MinWidth="800" MinHeight="600" Closing="cierreVentana">
+        Title="MainWindow" Height="763" Width="1018" Background="#FFBD0404" Icon="tamagotchi.png" MinWidth="800" MinHeight="600">
     <Window.Resources>
         <Storyboard x:Key="StoryboardOjoDerecho"/>
         <Storyboard x:Key="Comer" AutoReverse="True" RepeatBehavior="3x">
