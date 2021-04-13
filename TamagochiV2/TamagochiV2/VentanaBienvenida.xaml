@@ -1,0 +1,54 @@
+﻿<Window x:Class="TamagochiV2.VentanaBienvenida"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TamagochiV2"
+        mc:Ignorable="d"
+        Title="VentanaBienvenida" Height="300" Width="500" WindowStartupLocation="CenterScreen" WindowStyle="None" ResizeMode="NoResize">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="121*"/>
+            <RowDefinition Height="65*"/>
+            <RowDefinition Height="84*"/>
+        </Grid.RowDefinitions>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                <GradientStop Color="#FF050000" Offset="1"/>
+                <GradientStop Color="#FFB41C1C"/>
+                <GradientStop Color="Black" Offset="1"/>
+                <GradientStop Color="#FF153808" Offset="0.774"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="126*"/>
+            <ColumnDefinition Width="272*"/>
+            <ColumnDefinition Width="95*"/>
+        </Grid.ColumnDefinitions>
+        <TextBox x:Name="tbnombre" Margin="31.6,16,10.4,15.4" TextWrapping="Wrap" FontSize="14" Background="#FF9C332A" BorderBrush="#FF762A15" SelectionBrush="#FF6E2414" Grid.Row="1" FontWeight="Bold" Grid.Column="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Button Content="Empezar" Margin="78.6,16.6,10.4,35.6" Click="Button_Click" FontWeight="Bold" Background="#FFAE4C4C" Grid.Row="2" Grid.Column="1"/>
+        <Viewbox x:Name="ViewBox1" Stretch="Uniform" RenderTransformOrigin="0.5,0.5" Margin="16.6,52,14.4,37" Grid.Column="1">
+            <Viewbox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleY="-1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Viewbox.RenderTransform>
+            <TextBlock TextWrapping="Wrap" Height="20" Width="112" RenderTransformOrigin="0.5,0.5" Text="IPO2-TAMAGOTCHI" FontWeight="Bold">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleX="-1"/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="180.253"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform></TextBlock>
+        </Viewbox>
+        <Viewbox Stretch="Uniform" Margin="17,12,0,0" Grid.Row="1">
+            <TextBlock TextWrapping="Wrap" Text="Nombre del Tamagotchi" Height="36" Width="71" FontWeight="Bold"/>
+        </Viewbox>
+
+    </Grid>
+</Window>
